@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content=""/>
+		<meta name="author" content="devbinnooh"/>
+		<title>Nutrition Facts Calculator</title>
+		<!-- Bootstrap core CSS -->
+		<link href="./index_files/bootstrap.min.css" rel="stylesheet"/>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="./index_files/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+		<!-- Custom styles for this template -->
+		<link href="./index_files/style.css" rel="stylesheet"/>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+	</head>
+	<body cz-shortcut-listen="true">
+		<nav class="navbar navbar-custom navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"/>
+						<span class="icon-bar"/>
+						<span class="icon-bar"/>
+					</button><a class="navbar-brand" href="./index.html">Nutrition Facts Calculator</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="./index.html">Home</a>
+						</li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="container">
+			<div class="starter-template">
+				<h1>Nutrition Facts Calculator</h1><p class="lead">Use the interactive tool below to easily calculate nutrition information<br>
+					</p>
+				</div>
+				<form action="#">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="netWeight" data-toggle="tooltip" data-placement="top" title="The Total Weight of Food">Net Weight</label>
+								<div class='controls form-inline'>
+									<input type="number" class="form-control" id="netWeight" placeholder="The Total Weight of Food" value="100">
+										<span class="inline-help-block help-block">Grams</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="servingSize">Serving Size</label>
+									<div class='controls form-inline'>
+										<input type="number" class="form-control" id="servingSize" placeholder="Serving Size" value="100">
+											<span class="inline-help-block help-block">Grams</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-md-offset-4">
+									<div class="form-group">
+										<label for="totalFat" data-toggle="tooltip" data-placement="top" title="Total Fat (saturated ,unsaturated, trans)">Total Fat</label>
+										<div class='controls form-inline'>
+											<input type="number" class="form-control" id="totalFat" placeholder="Total Fat (saturated ,unsaturated, trans)" value="1">
+												<span class="inline-help-block help-block">Grams</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4 col-md-offset-4">
+										<div class="form-group">
+											<label for="totalCarbohydrate">Total Carbohydrate</label>
+											<div class='controls form-inline'>
+												<input type="number" class="form-control" id="totalCarbohydrate" placeholder="Total Carboydrate (Dietary Fiber and Sugar)" value="20">
+													<span class="inline-help-block help-block">Grams</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4">
+											<div class="form-group">
+												<label for="protein">Protein</label>
+												<div class='controls form-inline'>
+													<input type="number" class="form-control" id="protein" placeholder="Protein" value="5">
+														<span class="inline-help-block help-block">Grams</span>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<button type="submit" class="btn btn-default">Calculate</button>
+									</form>
+									<div class="row">
+										<div class="col-md-12">
+											<table class="table table-striped">
+												<caption>Nutrition Fact Calculated per Grams</caption>
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Nutrition Name</th>
+														<th>Fact Size Per Serving</th>
+														<th>Fact Size Per Net Weight</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Total Fat</td>
+														<td result-for="servingFat"></td>
+														<td result-for="totalFat" ></td>
+													</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Total Carbohydrate</td>
+														<td result-for="servingCarbohydrate"> </td>
+														<td result-for="totalCarbohydrate"> </td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Protein</td>
+														<td result-for="servingProtein"> </td>
+														<td result-for="totalProtein"> </td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+								</div>
+								<!-- /.container -->
+								<script src="./index_files/jquery.min.js" > </script>
+								<script src="./index_files/bootstrap.min.js" > </script>
+								<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+								<script src="./index_files/ie10-viewport-bug-workaround.js" > </script>
+								<script >
+
+									function saveDefaultValues(){
+										//if it's IE and is run locally, ignore storing feature - IE bug
+										if(localStorage !== undefined)
+										{
+											localStorage.setItem('netWeight', $('#netWeight').val());
+
+											localStorage.setItem('totalFat', $('#totalFat').val());
+
+											localStorage.setItem('totalCarbohydrate', $('#totalCarbohydrate').val());
+
+											localStorage.setItem('protein', $('#protein').val());
+
+											localStorage.setItem('servingSize', $('#servingSize').val());
+										}
+									};
+
+									function setDefaultValues(){
+										//if it's IE and is run locally, ignore storing feature - IE bug
+										if(localStorage !== undefined)
+										{
+											if(localStorage.getItem('netWeight') !== null)
+											{
+												$('#netWeight').val(localStorage.getItem('netWeight'));
+											}
+											if(localStorage.getItem('totalFat') !== null)
+											{
+												$('#totalFat').val(localStorage.getItem('totalFat'));
+											}
+											if(localStorage.getItem('totalCarbohydrate') !== null)
+											{
+												$('#totalCarbohydrate').val(localStorage.getItem('totalCarbohydrate'));
+											}
+											if(localStorage.getItem('protein') !== null)
+											{
+												$('#protein').val(localStorage.getItem('protein'));
+											}
+											if(localStorage.getItem('servingSize') !== null)
+											{
+												$('#servingSize').val(localStorage.getItem('servingSize'));
+											}
+										}
+									};
+
+									function calculateFacts(){
+										$('td[result-for="servingFat"]').text(function(){
+											return $('#totalFat').val();
+										});
+										$('td[result-for="servingCarbohydrate"]').text(function(){
+											return $('#totalCarbohydrate').val();
+										});
+										$('td[result-for="servingProtein"]').text(function(){
+											return $('#protein').val();
+										});
+
+										//calculate total fat for net weight
+										$('td[result-for="totalFat"]').text(function(){
+											var dataNumber = $('#totalFat').val();
+											var servingSize = $('#servingSize').val();
+											var netWeight = $('#netWeight').val();
+											var calculatedSum = calculateTotalWeight(dataNumber,servingSize,netWeight);
+											return precise_round(calculatedSum,2);
+										});
+
+										//calculate total Carbohydrate for net weight
+										$('td[result-for="totalCarbohydrate"]').text(function(){
+											var dataNumber = $('#totalCarbohydrate').val();
+											var servingSize = $('#servingSize').val();
+											var netWeight = $('#netWeight').val();
+											var calculatedSum = calculateTotalWeight(dataNumber,servingSize,netWeight);
+											return precise_round(calculatedSum,2);
+										});
+
+										//calculate total protein for protein
+										$('td[result-for="totalProtein"]').text(function(){
+											var dataNumber = $('#protein').val();
+											var servingSize = $('#servingSize').val();
+											var netWeight = $('#netWeight').val();
+											var calculatedSum = calculateTotalWeight(dataNumber,servingSize,netWeight);
+											return precise_round(calculatedSum,2);
+										});
+									 };
+
+									function calculateTotalWeight(dataNumber,servingSize,totalSize)
+									{
+										return (  ( dataNumber/ servingSize  )* totalSize )
+									};
+
+									function precise_round(num, decimals) {
+										var t=Math.pow(10, decimals);   
+										return (Math.round((num * t) + (decimals>0?1:0)*(Math.sin(num) * (10 / Math.pow(100, decimals)))) / t).toFixed(decimals);
+									}
+
+									$(document).ready(function(){
+										 $('[data-toggle="tooltip"]').tooltip();
+
+										 $('button[type="submit"]').on('click',function(event){
+											 if(!$('form')[0].checkValidity())
+											{
+												return true;
+											}
+											calculateFacts();
+											saveDefaultValues();
+											return false;
+											});
+										$('input[type="number"]').on('change keypress',function(event){
+											$('button[type="submit"]').click();
+										});
+
+										//select input on focus - for easy editing
+										 $("input[type='number']").focus(function() { $(this).select(); } );
+
+										 setDefaultValues();
+										 calculateFacts();
+									 });
+
+
+								</script>
+
+							</body>
+						</html>
