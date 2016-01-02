@@ -1,6 +1,6 @@
 ## Nutrition Facts Calculator
 
-An Interact tool that calculate the nutrition for the net weight of food.
+An Interactive tool that calculate the nutritions for the net weight of food.
 Since most of food nutrition fact tables are based on "Serving Size" which some times is not equal the total size of food,
 this interactive tool can help you easily calculate the total nutritions. <br/>
 
